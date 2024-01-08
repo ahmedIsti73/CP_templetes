@@ -20,6 +20,9 @@ ll poW(ll x, ll n)
 ll nCr(ll n,ll r){
     return (fact[n] * poW((fact[r]*fact[n-r])%mod,mod-2)) % mod;
 }
+ll nPr(ll n,ll r){
+    return (fact[n] * poW(fact[n-r]%mod,mod-2)) % mod;
+}
 int32_t main(){
     fact[0]=1;
     for(int i=1;i<=60;i++){
