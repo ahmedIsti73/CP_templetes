@@ -1,24 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define optimize()                 \
-    ios_base ::sync_with_stdio(0); \
-    cin.tie(0);                    \
-    cout.tie(0);
-#define fraction() cout.unsetf(ios::floatfield);cout.precision(10);cout.setf(ios::fixed,ios::floatfield);
-void file(){
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-}
 #define endl '\n'
 #define ll long long int
-#define ha cout << "YES" << endl
-#define na cout << "NO" << endl
-#define na1 cout << "-1" << endl;
-#define lup(z, n) for (int i = z; i < n; ++i)
-#define lup_1(z, n) for (int i = z; i <= n; ++i)
-#define MAX (ll)(1LL << 31) - 1
 #define F first
 #define S second
 #define PB push_back
@@ -27,8 +10,6 @@ void file(){
 #define SI stoi
 #define popcnt __builtin_popcountll
 #define clz __builtin_clz
-#define um unordered_map
-#define mem(arr,x) memset(arr,x,sizeof arr)
 #define prr pair<ll,ll>
 #define rt(v,l) rotate(v.begin(),v.begin()+l,v.end()); // arr = 1,2,3,4,5,6 dile amra index 3 input dile ans arr= 4,5,6,1,2,3 dibe
 ll lcm(ll a, ll b)
@@ -142,8 +123,6 @@ bool cmp(const pair<int,int> &p1 ,const pair<int ,int> &p2)
 //:::::::::::::::::::::::::::::::::::::::GlitcH::::::::::::::::::::::::::::::::
 int32_t main()
 {
-    file();
-    optimize();
     ll x=1e7;
     seive(x);
     // for(int  i=0;i<segsiv.size();i++) cout<<segsiv[i]<<' '; cout<<endl;
