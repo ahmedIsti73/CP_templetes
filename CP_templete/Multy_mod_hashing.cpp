@@ -1,24 +1,7 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("avx,avx2,fma")
-#pragma GCC optimization ("unroll-loops")
 #include<bits/stdc++.h>
 using namespace std;
-#define optimize()                 \
-    ios_base ::sync_with_stdio(0); \
-    cin.tie(0);                    \
-    cout.tie(0);
-void file(){
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-}
 #define endl '\n'
 #define ll long long int
-#define F first
-#define S second
-#define PB push_back 
-
 const ll p=65;
 const ll N=1e6+10;
 pair<ll,ll> mod={1e9+7,1e9+9};
@@ -26,19 +9,14 @@ pair<ll,ll> mod={1e9+7,1e9+9};
 vector<ll>pr = {1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000097, 1000000103, 1000000123, 1000000181, 1000000207, 1000000223, 1000000241, 1000000271, 1000000289};
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-long long get_random()
-{
+long long get_random(){
     return (long long)(rng());
 }
-
-long long get_random_in_range(long long L, long long R)
-{
+long long get_random_in_range(long long L, long long R){
     long long rndm = get_random();
     return L + (rndm % (R - L + 1));
 }
-
-void randommod()
-{
+void randommod(){
     ll i = get_random_in_range(0, 14);
     mod.F = pr[i];
     pr.erase(pr.begin()+i);
@@ -55,14 +33,12 @@ ll powerr(ll a,ll b,ll mod){
 	}
 	return r;
 }
-
 ll add(ll a,ll b,ll mod){return ((a%mod)+(b%mod)+mod)%mod;}
 ll substract(ll a,ll b,ll mod){return ((a%mod)-(b%mod)+mod)%mod;}
 ll mult(ll a,ll b,ll mod) {return ((a%mod)*(b%mod))%mod;}
 ll fn(char ch){if(islower(ch)) return ch-'a'+1;if(isupper(ch)) return ch-'A'+1;return ch-'0'+1;}
 
 pair<ll,ll> pw[N+10],h[N+10],inv[N+10];
-
 void precal(){
 	pw[0].F=pw[0].S=1;
 	for(int i=1;i<N;i++){
@@ -77,7 +53,6 @@ void precal(){
 		inv[i].S=mult(inv[i-1].S,pw_inv2,mod.S);
 	}	
 }
-
 void build(string s){
 	ll n=s.size();
 	for(int i=0;i<n;i++){
@@ -92,7 +67,6 @@ void build(string s){
 		h[i].S=add(a2,b2,mod.S);
 	}
 }
-
 pair<ll,ll> gethash(ll l,ll r){
 	ll res1=h[r].F;
 	ll res2=h[r].S;
@@ -106,8 +80,6 @@ pair<ll,ll> gethash(ll l,ll r){
 }
 
 int main(){
-	file();
-	optimize();
 	// randommod();
 	precal();
 
