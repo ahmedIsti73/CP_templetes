@@ -39,13 +39,7 @@ ll lcm(ll a, ll b)
 //----------policy base data structure ---------
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
-typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > pbds; 
-/// change ll to any data type
-/// less_equal for multiset increasing order
-/// less for set increasing order
-/// greater_equal for multiset decreasing order
-/// greater for set decreasing order
-
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > pbds;
 /// cout<<*X.find_by_order(1)<<endl; // eta index input dile oi index er value print korbe
 /// cout<<X.order_of_key(-5)<<endl;  // input value theke koto gula small value ase setar count print korbe
 // for pbds set---
@@ -184,36 +178,3 @@ int32_t main()
 
     // }
 }
-
-// bellow code is for print the all of the possible subset of the given arr except null subset
-//  int n; cin>>n;
-//     int arr[n];
-//     for(int i=0;i<n;i++)
-//     {
-//         cin>>arr[i];
-//     }
-//     for(int mask =1;mask< pow(2,n);mask++)
-//     {
-//         for(int i=0;i<n;i++)
-//         {
-//             if(mask & (1<<i))
-//             {
-//                 cout<<arr[i]<<" ";
-//             }
-//         }
-//         cout<<endl;
-//     }
-
-// all the subsequence using recursion
-// void subseq(ll ind,vector<ll> &v,ll arr[],ll n){
-//     if(ind==n){
-//         for(auto it:v){
-//             cout<<it<<' ';
-//         }cout<<endl;
-//         return;
-//     }
-//     v.PB(arr[ind]);
-//     subseq(ind+1,v,arr,n);
-//     v.pop_back();
-//     subseq(ind+1,v,arr,n);
-// }
