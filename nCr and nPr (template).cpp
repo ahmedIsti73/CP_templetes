@@ -3,13 +3,10 @@ using namespace std;
 #define ll long long
 const ll mod=1e9+7;
 ll fact[69];
-ll poW(ll x, ll n)
-{
+ll poW(ll x, ll n){
     ll result = 1;
-    while (n > 0)
-    {
-        if (n & 1LL == 1)
-        {
+    while (n > 0){
+        if (n & 1LL == 1){
             result = (result * x)%mod;
         }
         x = (x * x)%mod;
