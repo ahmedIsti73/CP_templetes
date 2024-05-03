@@ -33,7 +33,7 @@ void file(){
 
 const ll p=31;
 const ll N=1e6+10;
-const ll mod=1e9+9;
+const ll mod=1000000289;
 ll powerr(ll a,ll b){
 	ll r=1;
 	while(b){
