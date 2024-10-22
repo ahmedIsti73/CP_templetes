@@ -2,6 +2,8 @@
 using namespace std;
 #define endl '\n'
 #define ll long long int
+#define F               first
+#define S               second
 const ll p=65;
 const ll N=1e6+10;
 pair<ll,ll> mod={1e9+7,1e9+9};
