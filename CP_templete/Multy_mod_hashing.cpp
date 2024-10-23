@@ -1,14 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define optimize()                 \
+    ios_base ::sync_with_stdio(0); \
+    cin.tie(0);                    \
+    cout.tie(0);
 #define endl '\n'
 #define ll long long int
 #define F               first
 #define S               second
 const ll p=65;
 const ll N=1e6+10;
-pair<ll,ll> mod={1e9+7,1e9+9};
+const pair<ll,ll> mod={127657753,987654319};
 // ---------------------random mod generatior ------------------------
-vector<ll>pr = {1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000097, 1000000103, 1000000123, 1000000181, 1000000207, 1000000223, 1000000241, 1000000271, 1000000289};
+ vector<ll>pr = {1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000097, 1000000103, 1000000123, 1000000181, 1000000207, 1000000223, 1000000241, 1000000271, 1000000289};
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 long long get_random(){
@@ -82,6 +86,7 @@ pair<ll,ll> gethash(ll l,ll r){
 }
 
 int main(){
+	optimize();
 	// randommod();
 	precal();
 
