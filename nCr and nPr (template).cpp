@@ -21,9 +21,11 @@ ll nPr(ll n,ll r){
     return (fact[n] * poW(fact[n-r]%mod,mod-2)) % mod;
 }
 int32_t main(){
+    ios_base ::sync_with_stdio(0);
+    cin.tie(0);                   
+    cout.tie(0);
     fact[0]=1;
     for(int i=1;i<=60;i++){
         fact[i]=(fact[i-1]*i*1LL)%mod;
     }
-    cout<<nCr(20,7)<<endl;
 }
