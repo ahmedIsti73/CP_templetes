@@ -40,17 +40,8 @@ ll lcm(ll a, ll b)
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
 typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > pbds; 
-/// change ll to any data type
-/// less_equal for multiset increasing order
-/// less for set increasing order
-/// greater_equal for multiset decreasing order
-/// greater for set decreasing order
-
 /// cout<<*X.find_by_order(1)<<endl; // eta index input dile oi index er value print korbe
 /// cout<<X.order_of_key(-5)<<endl;  // input value theke koto gula small value ase setar count print korbe
-// for pbds set---
-// 1.cout<<*lower_bound(x)<<endl; 2.cout<<*upper_bound(x)<<endl;
-
 //-----------PBDS tamplate end------------------
 //------------------ seive -----------------------------
 // to show prime numbers
@@ -140,12 +131,6 @@ bool cmp(const pair<int,int> &p1 ,const pair<int ,int> &p2)
     else if(p1.first==p2.first) return (p1.second<p2.second);
     return false;
 }
-
-//                     PROBLEM LINK             //
-
-/////////////  ///////////
-
-//:::::::::::::::::::::::::::::::::::::::GlitcH::::::::::::::::::::::::::::::::
 int32_t main()
 {
     file();
@@ -190,3 +175,46 @@ int32_t main()
 //         }; dfs(1,0);
 
 // gp_hash_table<int,int> mp; // faster than unordered map
+
+
+// ll xoR(ll n){
+//     //xor of 0 to n 
+//     ll x=n%4;
+//     if(x==0) return n;
+//     if(x==1) return 1;
+//     if(x==2) return n+1;
+//     if(x==3) return 0;
+// }
+// ll nCr(ll n,ll r){
+//     r=min(r,n-r);
+//     ll ret=1;
+//     for(int i=1;i<=r;i++){
+//         ret*=(n-i+1);
+//         ret/=i;
+//     }
+//     return rat;
+// }
+
+// another way of comperator sort 
+// sort(processes.begin(), processes.end(), [](const Process& a, const Process& b) {
+//         return a.arrivalTime < b.arrivalTime;
+// });
+
+  // string a; int b; cin >> a >> b; // divisibility of a large number 
+  // int ans = 0;
+  // for (int i = 0; i < a.size(); i++) {
+  //   ans = (ans * 10LL % b + (a[i] - '0')) % b;
+  // }
+// vector<vector<vector<ll>>> dp(2, vector<vector<ll>>(n + 2, vector<ll>(n + 2, 0))); == dp[2][n][n]={};
+
+// cout<<*next(ck.begin(),k-1)<<endl; kth value of a set
+
+// ll powerr(ll a,ll b,ll mod){
+//     ll r=1;
+//     while(b){
+//         if(b%2) r=((r%mod) *(a%mod))%mod;
+//         a=((a%mod)*(a%mod))%mod;
+//         b/=2;
+//     }
+//     return r;
+// }
