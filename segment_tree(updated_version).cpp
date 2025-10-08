@@ -38,3 +38,4 @@ struct ST{
         return query(node*2,l,mid,i,j)+query(node*2+1,mid+1,r,i,j); // check here
     }
 }t;
+
