@@ -1,16 +1,11 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define optimize()             \
-ios_base ::sync_with_stdio(0); \
-cin.tie(0);                    \
-cout.tie(0);
 #define ll long long 
-const int N=2e5+123;
-ll arr[N];
 struct ST{
-    ll t[N*3];
-    ST(){
-        memset(t,0,sizeof t);
+    int n;            
+    vector<int> t,arr; 
+    void init(int n) {
+        this->n=n;
+        t.assign(4 * n + 5, 0); 
+        arr.assign(n+5,0);
     }
     inline void here(int node){
         t[node]=t[node*2]+t[node*2+1];  // check here
@@ -43,15 +38,3 @@ struct ST{
         return query(node*2,l,mid,i,j)+query(node*2+1,mid+1,r,i,j); // check here
     }
 }t;
-int main(){
-optimize();  
-#ifndef ONLINE_JUDGE
-freopen("input.txt", "r", stdin);
-freopen("output.txt", "w", stdout);
-#endif
-    for(int i=1;i<=6;i++) cin>>arr[i];
-    t.build(1,1,6);
-    cout<<t.query(1,1,6,2,5)<<endl;
-    t.upd(1,1,6,3,20);
-    cout<<t.query(1,1,6,2,5)<<endl;
-}
