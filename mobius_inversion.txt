@@ -177,36 +177,3 @@ void solve_primitive_strings(){
 int32_t main(){
   solve_lcm();
 }
-
-
-
-
-/*
-cout << "### Example 1: Basic Arithmetic ###" << endl;
-mi a = 1'000'000'000; // 1 billion
-mi b = 10;
-cout << "a + b = " << (a + b) << endl; 
-cout << "b - a = " << (b - a) << endl;
-cout << "a * b = " << (a * b) << endl;
-
-cout << "### Example 2: Division and Power ###" << endl;
-
-// Calculate 2^100 % MOD
-mi p = pow(mi(2), 100);
-cout << "2^100 = " << p << endl;
-// Calculate (2^100 / 2)
-mi p_div_2 = p / mi(2);
-cout << "2^100 / 2 = " << p_div_2 << endl;
-
-cout << "### Example 3: O(N) Factorial Method ###" << endl;
-// We must call precompute() first.
-mi::precompute(1000); // Pre-calculate factorials up to 1000
-cout << "10C3 (from nCr) = " << mi::nCr(10, 3) << endl;
-cout << "10P3 (from nPr) = " << mi::nPr(10, 3) << endl;
-
-cout << "### Example 4: O(N^2) genComb Method ###" << endl;
-// We must call genComb() first.
-mi::genComb(100); // Pre-calculate a 100x100 table
-cout << "10C3 (from scmb) = " << mi::scmb[10][3] << endl;
-cout << "50C25 (from scmb) = " << mi::scmb[50][25] << endl;
-*/
