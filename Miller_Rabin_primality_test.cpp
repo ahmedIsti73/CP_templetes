@@ -1,8 +1,8 @@
 // Miller Rabin 
-ll modMul(ll a,ll b,ll mod) {
+ll modMul(ll a,ll b,ll mod) { // O(1)
     return (__int128)a*b%mod;
 }
-ll modPower(ll base,ll exp,ll mod) {
+ll modPower(ll base,ll exp,ll mod) { // O(exp)
     ll res=1;
     base%=mod;
     while(exp>0) {
@@ -12,7 +12,7 @@ ll modPower(ll base,ll exp,ll mod) {
     }
     return res;
 }
-bool MillerRabin(ll n,ll a,ll d,int s) {
+bool MillerRabin(ll n,ll a,ll d,int s) { // O(log n)
     ll x=modPower(a,d,n);
     if(x==1 || x==n-1) return true;
     for(int r=1;r<s;r++) {
@@ -22,7 +22,7 @@ bool MillerRabin(ll n,ll a,ll d,int s) {
     }
     return false;
 }
-bool isPrime(ll n) {
+bool isPrime(ll n) { // O(log n)
     if(n<=1) return false;
     if(n==2 || n==3) return true;
     if(!(n%2)) return false;
