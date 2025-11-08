@@ -1,4 +1,9 @@
 // this is the topic to find prime fact of a big number 
+#include "bits/stdc++.h"
+using namespace std;
+#define endl '\n'
+#define PB push_back
+using ll = unsigned long long;
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 ll rand(ll n) { return rng() % (n - 2) + 1; }
 ll modMul(ll a,ll b,ll mod) {
@@ -82,10 +87,13 @@ ll pollard_rho(ll n) {
             tortoise=2; hare=2; product=1; count=0;
             continue;
         }
-        ll prev_product=product;
-        product=modMul(product,abs(tortoise-hare),n);
+        ll prev_product=product,diff;
+        if(tortoise>hare) diff=tortoise-hare;
+        else diff=hare-tortoise;
+        product=modMul(product,diff,n);
         if(!product) {
             d=gcd(prev_product,n);
+            if(d==1) d=gcd(diff,n);
             break;
         }
         count++;
@@ -96,38 +104,38 @@ ll pollard_rho(ll n) {
             product=1;
         }
     }
-    if(d==n) return pollard_rho(n);
+    if(d==n || d==1) return pollard_rho(n);
     return d;
 }
-vector<ll>factorize(ll n) {
-    vector<ll> primeFactors;
-    if(n<=1) return primeFactors;
+void factorize(ll n,vector<ll>& primeFactors) {
+    if(n<=1) return;
     while(!(n%2)) {
         primeFactors.PB(2);
         n/=2;
     }
-    if(n==1) return primeFactors;
+    if(n==1) return;
     while(n>1 && n<MAX_SIEVE) {
         primeFactors.PB(spf[n]);
         n/=spf[n];
     }
-    if(n==1) return primeFactors;
+    if(n==1) return;
     if(isPrime(n)) {
         primeFactors.PB(n);
-        return primeFactors;
+        return;
     }
     ll d=pollard_rho(n);
-    vector<ll> fd=factorize(d);
-    vector<ll> fnd=factorize(n/d);
-    primeFactors.insert(primeFactors.end(),fd.begin(),fd.end());
-    primeFactors.insert(primeFactors.end(),fnd.begin(),fnd.end());
-    return primeFactors;
+    factorize(d,primeFactors);
+    factorize(n/d,primeFactors);
 }
-void GLITCH_() {
+int32_t main() {
     init_sieve(); // run it before testcase
-    ll n; cin>>n;
-    auto ans=factorize(n);
-    sort(ans.begin(),ans.end());
-    cout<<ans.size()<<' ';
-    for(auto u:ans) cout<<u<<' '; cout<<endl;
+    int t; cin>>t;
+    while(t--){
+        ll n; cin>>n;
+        vector<ll> ans;
+        factorize(n,ans);
+        sort(ans.begin(),ans.end());
+        cout<<ans.size()<<' ';
+        for(auto u:ans) cout<<u<<' '; cout<<endl;
+    }
 }
