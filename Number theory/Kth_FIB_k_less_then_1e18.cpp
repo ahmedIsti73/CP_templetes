@@ -4,6 +4,20 @@ const int mod=1e8+7;
  * and remove mod from function variable declare it will make it 
  * 5-10X faster if no need __int128 then remove it from mul more fast
  * For prefix sum f(n+2)-(a+b)
+ * sum of f(0)^2+f(1)^2+..+f(n)^2 = f(n)*f(n+1)
+ * gcd(f(n),f(m)) = f(gcd(n,m))
+ * odd index sum = f(2n)
+ * evne index sum f(2n+1)-1
+ * THEOREM: Every positive integer N can be uniquely represented as the sum 
+    of non-consecutive Fibonacci numbers. (i.e., If you use F[i], you cannot use F[i-1] or F[i+1]).
+
+ 2. SEQUENCE: Uses Fib starting 1, 2, 3, 5, 8... (Index: F[0]=1, F[1]=2...)
+ 3. EXAMPLE: N = 100
+    - Largest Fib <= 100 is 89. (Rem = 11)
+    - Largest Fib <= 11 is 8.   (Rem = 3)
+    - Largest Fib <= 3 is 3.    (Rem = 0)
+    -> 100 = 89 + 8 + 3
+*/
 */
 inline ll mul(ll a,ll b,ll mod) {
 	return (__int128)a*b%mod;
