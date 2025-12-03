@@ -1,4 +1,3 @@
-const int mod=1e8+7;
 /*
  * Note : If MOD is constant then use (const int mod=Given mod)
  * and remove mod from function variable declare it will make it 
@@ -18,6 +17,7 @@ const int mod=1e8+7;
     - Largest Fib <= 3 is 3.    (Rem = 0)
     -> 100 = 89 + 8 + 3
 */
+const int mod=1e8+7;
 inline ll mul(ll a,ll b,ll mod) {
 	return (__int128)a*b%mod;
 }
