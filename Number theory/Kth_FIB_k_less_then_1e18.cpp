@@ -18,7 +18,6 @@ const int mod=1e8+7;
     - Largest Fib <= 3 is 3.    (Rem = 0)
     -> 100 = 89 + 8 + 3
 */
-*/
 inline ll mul(ll a,ll b,ll mod) {
 	return (__int128)a*b%mod;
 }
