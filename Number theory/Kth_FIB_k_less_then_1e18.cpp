@@ -3,6 +3,7 @@ const int mod=1e8+7;
  * Note : If MOD is constant then use (const int mod=Given mod)
  * and remove mod from function variable declare it will make it 
  * 5-10X faster if no need __int128 then remove it from mul more fast
+ * For prefix sum f(n+2)-(a+b)
 */
 inline ll mul(ll a,ll b,ll mod) {
 	return (__int128)a*b%mod;
